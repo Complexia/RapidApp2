@@ -1,14 +1,31 @@
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1>Welcome to your course app</h1>
 
   <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
+    This is the home page for RAD Assignment 2
   </h2>
+  <%if logged_in? %>
+    <%= link_to "Create a course!", create_path, class: "btn btn-lg btn-primary" %>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% else %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%end%>
+
+
+
+
 </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
+<div class="row">
+  <div class="col-md-3">
+    <h3> View courses as guest </h3>
+    <h2> Browse and view all courses as guest and sign up later. </h2>
+    <%= link_to "Browse all courses", browsecourses_path, class: "btn btn-sml btn-primary" %>
+  </div>
+  <div class="col-md-3">
+    <h3> Sign in to your account </h3>
+    <h2> Update your courses, create courses, view coordinator information. </h2>
+    <%= link_to "Log in to your account", login_path, class: "btn btn-sml btn-primary" %>
+  </div>
+
+</div>

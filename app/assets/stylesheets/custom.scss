@@ -8,6 +8,45 @@
 }
 
 
+
+
+.btn-lg{
+  background-color: red;
+  
+  margin-right: 20px;
+  &:hover{
+    color: #00a3b2;
+    text-decoration: none;
+  }
+}
+.btn-sml{
+  background-color: green;
+
+}
+
+.btn-primary{
+
+}
+
+#login{
+  background-color: green;
+}
+
+#nav-button{
+
+  margin-right: 20px;
+  &:hover{
+    color: #00a3b2;
+    text-decoration: none;
+  }
+}
+
+.navbar-fixed-top{
+  color:inherit;
+  background-color: inherit;
+  border-color: white;
+}
+
 /* universal */
 
 body {
@@ -48,7 +87,7 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+
   font-weight: normal;
   color: #777;
 }

@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
 
 
+  get 'courses/new'
+
+  get 'courses/show'
+
   get 'sessions/new'
+
+  get '/create', to: 'courses#new'
+
+  post '/create', to: 'courses#create'
+
+  get 'browsecourses', to: 'courses#show'
 
   root 'static_pages#home'
 

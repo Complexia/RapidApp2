@@ -1,27 +1,55 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
+    <%= link_to "Course Select", root_path, class: "btn btn-lg btn-primary", id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+
+        <li class="dropdown" id: "nav-button">
+          <a href="#" class="btn btn-lg btn-primary" id: "nav-button" data-toggle="dropdown" >
+            Category <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Web Development", '#' %></li>
+            <li><%= link_to "Java", '#' %></li>
+            <li><%= link_to "iOS Development", '#' %></li>
+            <li class="divider"></li>
+
+          </ul>
+        </li>
+
+        <li class="dropdown" id: "nav-button">
+          <a href="#" class="btn btn-lg btn-primary"  data-toggle="dropdown" >
+            Location <b class="caret", id: "nav-button"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "City", '#' %></li>
+            <li><%= link_to "Bundoora", '#' %></li>
+            <li><%= link_to "Vietnam", '#' %></li>
+            <li class="divider"></li>
+
+          </ul>
+        </li>
+
+
+
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%= link_to "Courses", '#', class: "btn btn-lg btn-primary" %>
+          <li class="dropdown" id:"nav-button">
+            <a href="#" class="btn btn-lg btn-primary" data-toggle="dropdown", id:"nav-button">
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", '#' %></li>
               <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
+
             </ul>
           </li>
+
+            <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-lg btn-primary", id: "nav-button" %>
+
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li id: "nav-button"><%= link_to "Log in", login_path, class: "btn btn-lg btn-primary", id: "nav-button" %></li>
         <% end %>
       </ul>
     </nav>
